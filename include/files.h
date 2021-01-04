@@ -7,7 +7,7 @@
 
 #include <vector>
 
-class Solution1;
+#include "include/1_TowSum.h"
 
 
 #endif

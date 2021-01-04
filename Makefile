@@ -6,7 +6,8 @@ LIBS_SHARE=
 INCPATH=-I./include \
 		-I.
 	
-SOURCES=main.cpp
+SOURCES=main.cpp \
+src/1_TwoSum.cpp
 
 OBJECTS=$(SOURCES:.cpp=.o)
 TARGET=main
