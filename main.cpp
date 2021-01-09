@@ -3,11 +3,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "include/2_AddTwoNums.h"
+#include "include/3_LongestSubstring.h"
 
 int main(int argc,char** agrv){
 	
-	Solution2 s1;
+	Solution3 s1;
 	s1.test();
 
 	return 0;

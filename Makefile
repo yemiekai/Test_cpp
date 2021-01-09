@@ -7,8 +7,9 @@ INCPATH=-I./include \
 		-I.
 	
 SOURCES=main.cpp \
-src/1_TwoSum.cpp\
-src/2_AddTwoNums.cpp
+src/1_TwoSum.cpp \
+src/2_AddTwoNums.cpp \
+src/3_LongestSubstring.cpp
 
 OBJECTS=$(SOURCES:.cpp=.o)
 TARGET=main
