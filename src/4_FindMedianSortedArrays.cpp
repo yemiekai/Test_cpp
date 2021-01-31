@@ -58,16 +58,18 @@ double Solution4::getKthNumber(std::vector<int>& num1, std::vector<int>& num2, i
             return std::min(num1[bias1], num2[bias2]);
         }
 
+        // 算中位数的位置, 并且防止越界
         int nowIdx1 = std::min(restNums/2-1 + bias1, length1-1);
         int nowIdx2 = std::min(restNums/2-1 + bias2, length2-1);
 
-        // 哪个小, 就把哪个数组前bias个数字干掉
+        // 哪个小, 就把哪个数组前bias个数字干掉, 对bias进行偏移
         if(num1[nowIdx1] <= num2[nowIdx2]){
             bias1 = nowIdx1 + 1;
         }else{
             bias2 = nowIdx2 + 1;
         }
         
+        // 还剩下的数, bias总数就是被干掉的数
         restNums = k - (bias1+bias2);
 
     }
