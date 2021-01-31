@@ -1,5 +1,5 @@
 #include "include/4_FindMedianSortedArrays.h"
-
+#include "include/utils.h"
 
 
 /*******************************************
@@ -76,5 +76,11 @@ double Solution4::getKthNumber(std::vector<int>& num1, std::vector<int>& num2, i
 }
 
 void Solution4::test(){
-    
+    int num1[2] = {1, 2};
+    int num2[2] = {3, 4};
+    std::vector<int> a = createVector(num1, 2);
+    std::vector<int> b = createVector(num2, 2);
+
+    double result = findMedianSortedArrays(a, b);
+    printf("result : %f\n", result);
 }

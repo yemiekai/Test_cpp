@@ -1,5 +1,5 @@
-#ifndef _3_LONGEST_SUBSTRING_H_
-#define _3_LONGEST_SUBSTRING_H_
+#ifndef _4_FIND_MEDIAN_SORTED_ARRAYS_H_
+#define _4_FIND_MEDIAN_SORTED_ARRAYS_H_
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -14,9 +14,9 @@ class Solution4 {
 public:
     void test();
     double findMedianSortedArrays(std::vector<int>& num1, std::vector<int>& num2);
-
-
     double getKthNumber(std::vector<int>& num1, std::vector<int>& num2, int k);
+
+
 };
 
 #endif

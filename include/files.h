@@ -8,6 +8,9 @@
 #include <vector>
 
 #include "include/1_TowSum.h"
+#include "include/2_AddTwoNums.h"
+#include "include/3_LongestSubstring.h"
+#include "include/4_FindMedianSortedArrays.h"
 
 
 #endif
