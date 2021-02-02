@@ -11,6 +11,8 @@
 #include "include/2_AddTwoNums.h"
 #include "include/3_LongestSubstring.h"
 #include "include/4_FindMedianSortedArrays.h"
+#include "include/5_LongestPalindrome.h"
+#include "include/6_ZConvert.h"
 
 
 #endif
