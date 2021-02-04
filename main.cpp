@@ -7,7 +7,7 @@
 
 int main(int argc,char** agrv){
 	
-	Solution6 s1;
+	Solution8 s1;
 	s1.test();
 
 	return 0;

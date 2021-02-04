@@ -3,8 +3,7 @@ CXX=g++
 CXXFLAGS= -std=c++11 -O2 #-DVERIFY_LICENSE
 
 LIBS_SHARE= 
-INCPATH=-I./include \
-		-I.
+INCPATH=-I./include -I.
 	
 
 SOURCES = main.cpp 
