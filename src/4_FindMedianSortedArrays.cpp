@@ -51,14 +51,14 @@ double Solution4::getKthNumber(std::vector<int>& num1, std::vector<int>& num2, i
         if(bias1 == length1){
             return num2[bias2 + restNums-1];
         }
-        if(bias2 == length2){
+        if(bias2 == length2){   
             return num1[bias1 + restNums-1];
         }
         if(restNums == 1){
             return std::min(num1[bias1], num2[bias2]);
         }
 
-        // 算中位数的位置, 并且防止越界
+        // 算中位数的位置, 并且防止越界, 两个(restNums/2-1)加起来是(restNums-2), 保证不会超过中位数
         int nowIdx1 = std::min(restNums/2-1 + bias1, length1-1);
         int nowIdx2 = std::min(restNums/2-1 + bias2, length2-1);
 
