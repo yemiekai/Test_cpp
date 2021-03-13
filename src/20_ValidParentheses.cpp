@@ -13,15 +13,14 @@ bool Solution20::isValid(std::string s){
         {'[', ']'},
         {'(', ')'}
     };
-
     std::vector<char> stack;
     for(char cc:s){
-        if(mp.find(cc) != mp.end()){
+        if(mp.count(cc)){  // 是左括号, 直接往stack里加
             stack.push_back(cc);
         }else{
-            char end = stack.back();
+            char end = stack.back();  // 是右括号, 取出栈顶元素
             stack.pop_back();
-            if(mp[cc] != cc){
+            if(mp[end] != cc){  // 是否配对
                 return false;
             }
         }
