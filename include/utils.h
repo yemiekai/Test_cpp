@@ -35,4 +35,6 @@ std::vector<TYPE> createVector(TYPE array[], int length){
 
     return res;
 }
+
+void getCoordinate(int* featureMap, float* pX, float *pY);
 #endif

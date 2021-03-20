@@ -21,9 +21,25 @@ std::pair<ListNode*, ListNode*> Solution25::reverse(ListNode* head, ListNode* en
  * 
  * 
  * 其中, head和end不变
- * [1] <---- [2]       [3] ----> [4] ----> [5] ----> [6]
- *            ^         ^         ^
- *         newHead  newHeadNext   n
+ * head                                              end
+   [1] <---- [2]       [3] ----> [4] ----> [5] ----> [6]
+           newHead newHeadNext    n
+   
+ * head                                              end
+   [1] <---- [2] <---- [3]       [4] ----> [5] ----> [6]
+           newHead newHeadNext    n
+
+ * head                                              end
+   [1] <---- [2] <---- [3]       [4] ----> [5] ----> [6]
+                     newHead      n
+                   newHeadNext    
+
+ * head                                              end
+   [1] <---- [2] <---- [3]       [4] ----> [5] ----> [6]
+                     newHead  newHeadNext  
+                       
+ * 
+ * 
  *******************************************************************/
     ListNode* newHead = head;
     ListNode* newHeadNext = head->next;

@@ -3,12 +3,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "include/files.h"
+#include "29_DivideTwoIntegers.h"
 
 int main(int argc,char** agrv){
-	
-	Solution8 s1;
-	s1.test();
+    
+    Solution29 s29;
+    int result;
 
-	return 0;
+    result = s29.divide(10, 6);
+    std::cout << result << std::endl;
+
+    return 0;
 }

@@ -38,12 +38,12 @@ std::string Solution5::longestPalindrome2(std::string s){
     int n = s.size();
     std::vector<std::vector<int>> dp(n, std::vector<int>(n));
     std::string ans;
-    /****
+    /****************************************
      * 先规划所有长度为1的子串
      * 再规划所有长度为2的子串
      * ....
      * 
-     ****/ 
+     ****************************************/ 
     for (int l = 0; l < n; ++l) {  // 控制子字符串长度
         for (int i = 0; i + l < n; ++i) {
             int j = i + l;

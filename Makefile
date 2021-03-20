@@ -7,7 +7,7 @@ INCPATH=-I./include -I.
 	
 
 SOURCES = main.cpp 
-SOURCES += $(wildcard ./src/*.cpp)
+# SOURCES += $(wildcard ./src/*.cpp)
 
 OBJECTS=$(SOURCES:.cpp=.o)
 TARGET=main
