@@ -4,7 +4,7 @@
 #include <vector>
 #include <algorithm>
 #include <queue>
-
+// 遍历的意思: https://www.pianshen.com/article/7106254596/
 // 二叉树结点
 struct TreeNode
 {
@@ -79,6 +79,8 @@ public:
 		TreeNode* p;
 
 		p = node;
+
+        // 思路: 只要该节点有左子树就进栈, 直到没得再进, 再开始弹出, 然后又看它的左子树
 
 		while (p != NULL || treelist.size() > 0) {
 			// 左子树全部进栈
@@ -210,12 +212,12 @@ public:
 
 	// 从前序遍历和中序遍历创建二叉树
 	TreeNode* CreateTree2(const int* pre, const int* mid, int length) {
-		/*
+		/*******************************************************************
 			pre: 前序遍历的数组指针, 如 [3] 2  1  5  4  8  7  9
 			mid: 中序遍历的数组指针, 如  1  2 [3] 4  5  7  8  9
 			length: 前序指针和中序指针的数组长度（两个一样长）
 			https://blog.csdn.net/jjwwwww/article/details/85799421
-		*/
+		********************************************************************/
 
 		// 递归结束条件
 		if (pre == NULL || mid == NULL || length < 0) {

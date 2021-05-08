@@ -18,7 +18,7 @@ void print_array(int* a, int leng) {
 }
 
 /*********************************************************************
-** 插入排序
+** 插入排序(从小到大)
 ** https://blog.csdn.net/LLZK_/article/details/51628574
 
 ** int* a: 指向一个数组
@@ -47,6 +47,7 @@ void insertSort(int* a, int leng) {
 		a[j + 1] = tmp;  // 位置合适, 插入
 	}
 }
+
 void test_insertSort() {
 	int* a = new int[7]{ 5, 4, 1, 6, 3, 2, 7 };
 	print_array(a, 7);
@@ -55,7 +56,7 @@ void test_insertSort() {
 }
 
 /*********************************************************************
-** 选择排序
+** 选择排序(从小到大)
 ** https://blog.csdn.net/changhangshi/article/details/82740541
 **********************************************************************/
 void selectSort(int* a, int leng) {
@@ -65,8 +66,9 @@ void selectSort(int* a, int leng) {
 	
 	while (current < (leng-1)) {
 		i = current;
-		min_index = current;
+		min_index = current;  // current前面都是已经排好的
 
+        // 遍历current后面, 找到最小的数
 		while (i < leng) {
 			min_index = a[i] < a[min_index] ? i : min_index;
 			i++;
@@ -77,6 +79,7 @@ void selectSort(int* a, int leng) {
 	}
 
 }
+
 void test_selectSort() {
 	int* a = new int[7]{ 5, 4, 1, 6, 3, 2, 7 };
 	print_array(a, 7);
@@ -85,7 +88,7 @@ void test_selectSort() {
 }
 
 /**********************************************************************
-** 快速排序
+** 快速排序(从小到大排)
 **********************************************************************/
 void quickSort(int arr[], int low, int high) {
 	if (high <= low) return;
@@ -94,7 +97,7 @@ void quickSort(int arr[], int low, int high) {
 	int key = arr[low];  // 基准值
 	while (true)
 	{
-		/*从左向右找比key大的值, （小的跳过）*/
+		/*从左向右找比key大的值, （小的跳过, 小的要保持在左边）*/
 		while (arr[++i] < key)
 		{
 			if (i == high) {
@@ -119,7 +122,10 @@ void quickSort(int arr[], int low, int high) {
 		arr[j] = temp;
 	}
 
-	/*中枢值与j对应值交换*/
+	/*
+	 * 基准值与j对应值交换  
+	 * 经过一轮while循环, j左边都比基准值小, 右边都比基准值大, 所以基准值要放到j的地方
+	**/
 	int temp = arr[low];
 	arr[low] = arr[j];
 	arr[j] = temp;
@@ -135,10 +141,10 @@ void mer_sort(int* arr, int left, int right, int mid) {
 	int r = mid +1;
 	int i = 0;
 
-	while (l <= left && r <= right) {
+	while (l <= mid && r <= right) {
 		arr_tmp[i++] = arr[l] < arr[r] ? arr[l++] : arr[r++];
 	}
-	while (l <= left) {
+	while (l <= mid) {
 		arr_tmp[i++] = arr[l++];
 	}
 	while (r <= right) {
@@ -152,15 +158,19 @@ void mer_sort(int* arr, int left, int right, int mid) {
 	delete[] arr_tmp;
 }
 
+
+/**********************************************************************
+** 归并排序(从小到大排)
+**********************************************************************/
 void mer(int* arr, int left, int right) {
 	if (left >= right) {
 		return;
 	}
 
 	int mid = (left + right) / 2;
-	mer(arr, left, mid);
-	mer(arr, mid + 1, left);
-	mer_sort(arr, left, right, mid);
+	mer(arr, left, mid);  // 分割
+	mer(arr, mid + 1, left);  // 分割
+	mer_sort(arr, left, right, mid);  // 合并
 }
 
 

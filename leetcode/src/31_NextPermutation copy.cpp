@@ -57,19 +57,23 @@
 void Solution31::nextPermutation(std::vector<int>& nums){
     int i = nums.size() - 2;
 
-    
+    // 从尾到头, 找出第一组升序的位置, 这个位置是[i]
     while(i >=0 && nums[i]>=nums[i+1]){
         i--;
     }
 
     if(i>=0){
         int j = nums.size() - 1;
+
+        // 从尾到头, 找到比位置[i]大的数, 这个位置是[j]
         while(j>=0 && nums[i]>=nums[j]){
             j--;
         }
 
+        // 交换这两个数
         std::swap(nums[i], nums[j]);
     }
 
+    // 对[i]以后的数排序(升序)
     std::reverse(nums.begin()+i+1, nums.end());
 }
