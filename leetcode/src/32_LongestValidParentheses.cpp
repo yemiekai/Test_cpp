@@ -25,9 +25,9 @@ int Solution32::longestValidParentheses(std::string s){
             stk.pop();
 
             if(stk.empty()){
-                stk.push(i);
+                stk.push(i);  // 栈为空, 把当前右括号的索引进栈
             }else{
-                maxLength = std::max(maxLength, i-stk.top());
+                maxLength = std::max(maxLength, i-stk.top());  // 当前索引减栈顶索引
             }
         }
     }

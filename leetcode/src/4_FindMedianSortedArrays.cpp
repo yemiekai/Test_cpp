@@ -74,7 +74,6 @@ double Solution4::getKthNumber(std::vector<int>& num1, std::vector<int>& num2, i
 
     }
 
-    
 }
 
 void Solution4::test(){
