@@ -81,7 +81,6 @@ public:
 		p = node;
 
         // 思路: 只要该节点有左子树就进栈, 直到没得再进, 再开始弹出, 然后又看它的左子树
-
 		while (p != NULL || treelist.size() > 0) {
 			// 左子树全部进栈
 			while (p != NULL) {
@@ -97,7 +96,6 @@ public:
 			p = p->right;
 		}
 	}
-
 
 	// 后序遍历(递归法)
 	void after_order1(TreeNode* node) {

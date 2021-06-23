@@ -1,5 +1,5 @@
-#include "include/4_FindMedianSortedArrays.h"
-#include "include/utils.h"
+#include "4_FindMedianSortedArrays.h"
+#include "utils.h"
 
 
 /*******************************************

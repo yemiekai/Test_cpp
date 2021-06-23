@@ -1,4 +1,4 @@
-#include "include/3_LongestSubstring.h"
+#include "3_LongestSubstring.h"
 
 
 int Solution3::lengthOfLongestSubstring(std::string s){

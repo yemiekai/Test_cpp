@@ -1,5 +1,5 @@
-#include "include/5_LongestPalindrome.h"
-#include "include/utils.h"
+#include "5_LongestPalindrome.h"
+#include "utils.h"
 
 
 /*******************************************

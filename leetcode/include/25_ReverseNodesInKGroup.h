@@ -10,14 +10,8 @@
 #include <map>
 #include <set>
 
+#include "1.h"
 
-struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode() : val(0), next(nullptr) {}
-    ListNode(int x) : val(x), next(nullptr) {}
-    ListNode(int x, ListNode *next) : val(x), next(next) {}
-};
 
 // 25. K个一组翻转链表
 class Solution25 {

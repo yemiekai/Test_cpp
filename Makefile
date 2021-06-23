@@ -3,11 +3,11 @@ CXX=g++
 CXXFLAGS= -std=c++11 -O2 #-DVERIFY_LICENSE
 
 LIBS_SHARE= 
-INCPATH=-I./include -I.
+INCPATH=-I. -I./include -I./leetcode/include
 	
 
 SOURCES = main.cpp 
-# SOURCES += $(wildcard ./src/*.cpp)
+SOURCES += $(wildcard ./leetcode/src/*.cpp)
 
 OBJECTS=$(SOURCES:.cpp=.o)
 TARGET=main

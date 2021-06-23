@@ -1,4 +1,4 @@
-#include "include/22_GenerateParentheses.h"
+#include "22_GenerateParentheses.h"
 #include "math.h"
 #include <algorithm>
 

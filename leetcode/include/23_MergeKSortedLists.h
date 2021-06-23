@@ -8,16 +8,7 @@
 
 #include <vector>
 #include <map>
-#include <set>
-
-
-struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode() : val(0), next(nullptr) {}
-    ListNode(int x) : val(x), next(nullptr) {}
-    ListNode(int x, ListNode *next) : val(x), next(next) {}
-};
+#include "1.h"
 
 // 23. 合并K个升序的列表
 class Solution23 {

@@ -1,4 +1,4 @@
-#include "include/31_NextPermutation.h"
+#include "31_NextPermutation.h"
 #include "math.h"
 #include <algorithm>
 #include <queue>

@@ -1,4 +1,4 @@
-#include "include/14_LongestCommonPrefix.h"
+#include "14_LongestCommonPrefix.h"
 #include "math.h"
 #include <algorithm>
 /*******************************************
