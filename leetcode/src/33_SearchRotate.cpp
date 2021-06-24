@@ -16,11 +16,17 @@ int Solution33::search(std::vector<int>& nums, int target){
         return nums[0] == target ? 0 : -1;
     }
     int l = 0, r = n - 1;
+
+    // 二分查找结束条件
     while (l <= r) {
         int mid = (l + r) / 2;
         if (nums[mid] == target){
             return mid;
         } 
+        
+        /************************************
+         * 根据情况判断收缩左边界还是右边界
+         ************************************/
 
         // 先判断是否落在左边有序空间
         if (nums[0] <= nums[mid]) {
