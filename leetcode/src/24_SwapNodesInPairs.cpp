@@ -9,7 +9,7 @@
 // 解法: https://lyl0724.github.io/2020/01/25/1/
 ListNode* Solution24::swapPairs(ListNode* head){
     // ListNode* head = new ListNode(0);
-    ListNode* p = head;
+    // ListNode* p = head;
 
     if(head == nullptr || head->next == nullptr){
         return head;
