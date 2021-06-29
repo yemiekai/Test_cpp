@@ -3,7 +3,7 @@ CXX=g++
 CXXFLAGS= -std=c++11 -O2 #-DVERIFY_LICENSE
 
 LIBS_SHARE= 
-INCPATH=-I. -I./include -I./leetcode/include
+INCPATH=-I. -I./include -I./leetcode/include -I./others/include -I./sort
 	
 
 SOURCES = main.cpp 

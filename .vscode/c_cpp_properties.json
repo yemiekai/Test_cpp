@@ -20,8 +20,9 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/include",
-                "${workspaceFolder}/include/**"
+                "${workspaceFolder}/sort",
+                "${workspaceFolder}/leetcode/include",
+                "${workspaceFolder}/others/include"
             ],
             "defines": [],
             "compilerPath":"D:/Programs/mingw64/bin/gcc.exe",

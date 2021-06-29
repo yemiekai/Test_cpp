@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <iostream> 
 #include <string>
+#include <string.h>  // memset的头文件
 
 #include <vector>
 #include <map>
