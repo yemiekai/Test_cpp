@@ -8,13 +8,7 @@
 /***********************************************************
  * 43 字符串相乘
  * 
- * 目前的做法越界了
- * s1: 1230
- * s2: 2
- * 
  ************************************************************/ 
-
-
 
 std::string Solution43::multiply(std::string num1, std::string num2){
 
@@ -55,7 +49,8 @@ std::string Solution43::multiply(std::string num1, std::string num2){
      * 每大循环一次, 要补一个0, 例如第二次大循环得到345, 要
      *********************************************/
     
-    int zeros = 0;
+    int zeros = 0;  // 要补几个零
+
     for(int i=smaller.size()-1; i>=0; i--){
 
         int lower = 0;
@@ -66,9 +61,9 @@ std::string Solution43::multiply(std::string num1, std::string num2){
         for(int j=bigger.size()-1; j>=0; j--){
             int x = (bigger[j] - '0') > 0 ? (bigger[j] - '0') : 0;
             int y = (smaller[i] - '0') > 0 ? (smaller[i] - '0') : 0;
-            int num = x*y + upper;
-            lower = num%10;
-            upper = num/10;
+            int num = x*y + upper;  // upper: 来自上一次的进位
+            lower = num%10;  // 个位数
+            upper = num/10;  // 十位数(要进位的)
             tmp += (lower+'0');
         }
 
@@ -85,11 +80,11 @@ std::string Solution43::multiply(std::string num1, std::string num2){
             tmp += "0";
         }
         
-        std::cout << tmp << std::endl;
-
+        // 加到结果里, 继续下一轮乘法
         result = addString(result, tmp);
         zeros++;
 
+        std::cout << tmp << std::endl;
     }
 
     return result;
@@ -100,12 +95,14 @@ std::string Solution43::multiply(std::string num1, std::string num2){
 
 // 两个字符串相加
 std::string Solution43::addString(std::string s1, std::string s2){
-    int idx = 1;
-    std::string result("");
-    int up = 0;
-    int sum = 0;
     std::cout << "add in1 :" << s1 << std::endl;
     std::cout << "add in2 :" << s2 << std::endl;
+
+    int idx = 1;
+    std::string result("");
+    int up = 0;  // 进位标志
+    int sum = 0;
+
     // 从低位开始加, 所以要反转一下
     std::reverse(s1.begin(), s1.end());
     std::reverse(s2.begin(), s2.end());
@@ -120,6 +117,11 @@ std::string Solution43::addString(std::string s1, std::string s2){
         idx++;
     }
     
+    /************************************************************
+     * 其中一个字符串已经处理完了, 剩下s1或者s2还有一部分
+     * 到底是谁还有剩的, 不用管, 2个while循环一视同仁
+     ************************************************************/
+
     while(idx<=s1.size()){
         int x = (s1[idx-1] - '0') > 0 ? (s1[idx-1] - '0') : 0;
         sum = x + up;
@@ -143,6 +145,7 @@ std::string Solution43::addString(std::string s1, std::string s2){
         result += '1';
     }
     
+    // 再倒回来
     std::reverse(result.begin(), result.end());
 
     std::cout << "add out :" << result << std::endl << std::endl;
