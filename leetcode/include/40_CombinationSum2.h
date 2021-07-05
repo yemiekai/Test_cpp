@@ -15,9 +15,6 @@
 class Solution40 {
 
 public:
-    std::vector<std::vector<int> > result;
-    std::vector<int> tmp;
-
     /**************************************************
      * 
      * 1. nowIdx : 每次递归都从当前索引开始, 往后遍历; 前面的不管了, 避免重复.

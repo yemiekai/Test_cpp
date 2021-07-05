@@ -37,6 +37,7 @@ public:
 
         // 对这个位置尝试填入0~9的数
         for (int digit = 0; digit < 9 && !valid; ++digit) {
+
             // 位置合法(行、列、格子 都没出现过这个数)
             if (!line[i][digit] && !column[j][digit] && !block[i / 3][j / 3][digit]) {
 
