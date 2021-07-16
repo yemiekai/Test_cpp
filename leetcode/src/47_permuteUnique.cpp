@@ -1,4 +1,4 @@
-#include "46_permute.h"
+#include "47_permuteUnique.h"
 #include "math.h"
 #include <algorithm>
 #include <queue>
@@ -6,13 +6,13 @@
 
 
 /***********************************************************
- * 46 全排列
+ * 47 全排列 II
  * 
  * 解见头文件
  * 
  ************************************************************/ 
 
-// std::vector<std::vector<int>>  Solution46::permute(std::vector<int>& nums){
+// std::vector<std::vector<int>>  Solution47::permuteUnique(std::vector<int>& nums){
 
 // }
 
