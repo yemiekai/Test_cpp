@@ -19,7 +19,7 @@
 void Solution48::rotate(std::vector<std::vector<int> > &matrix){
     int length = matrix.size();
     
-    // 首先每一行倒叙
+    // 首先每一行倒序
     for(int i = 0; i <length; i++){
         std::reverse(matrix[i].begin(), matrix[i].end());
     }
