@@ -72,8 +72,10 @@ public:
                 }
                 else {
                     // 已有数据, 设置标志位
-                    int digit = board[i][j] - '0' - 1;
-                    line[i][digit] = column[j][digit] = block[i / 3][j / 3][digit] = true;
+                    int digit = board[i][j] - '0' - 1;  // 该数字
+                    line[i][digit] = true;  // 行
+                    column[j][digit] = true;  // 列
+                    block[i / 3][j / 3][digit] = true;  // 块
                 }
             }
         }

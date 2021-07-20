@@ -18,12 +18,12 @@
 ********************************************************************/
 
 std::vector<std::vector<std::string> > Solution49::groupAnagrams(std::vector<std::string>& strs){
-    std::unordered_map<std::string, std::vector<std::string>> mmp;
+    std::unordered_map<std::string, std::vector<std::string>> mmp;  // [排序后的str: 该str]
 
-    for(std::string st : strs){
-        std::string tag(st);
-        std::sort(tag.begin(), tag.end());  // 排序
-        mmp[tag].push_back(st);  // 排序完的字符串作为键值
+    for(std::string it : strs){
+        std::string sorted(it);
+        std::sort(sorted.begin(), sorted.end());  // 排序
+        mmp[sorted].push_back(it);  // 排序完的字符串作为键值
     }
 
     std::vector<std::vector<std::string> > result;

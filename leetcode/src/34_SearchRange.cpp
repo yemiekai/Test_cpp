@@ -27,8 +27,8 @@ int Solution34::binarySearch(std::vector<int>& nums, int target, bool lower){
         }
 
     }
-
-
+   
+    return result;
 }
 
 

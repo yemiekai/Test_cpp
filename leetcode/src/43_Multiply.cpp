@@ -10,6 +10,70 @@
  * 
  ************************************************************/ 
 
+
+
+
+
+// 两个字符串相加
+std::string Solution43::addString(std::string s1, std::string s2){
+    std::cout << "add in1 :" << s1 << std::endl;
+    std::cout << "add in2 :" << s2 << std::endl;
+
+    int idx = 1;
+    std::string result("");
+    int up = 0;  // 进位标志
+    int sum = 0;
+
+    // 从低位开始加, 所以要反转一下
+    std::reverse(s1.begin(), s1.end());
+    std::reverse(s2.begin(), s2.end());
+
+    while(idx<=s1.size() && idx<=s2.size())
+    {
+        int x = (s1[idx-1] - '0') > 0 ? (s1[idx-1] - '0') : 0;
+        int y = (s2[idx-1] - '0') > 0 ? (s2[idx-1] - '0') : 0;
+        sum = x+y+up;
+        up = sum/10;
+        result += (sum%10 + '0');
+        idx++;
+    }
+    
+    /************************************************************
+     * 其中一个字符串已经处理完了, 剩下s1或者s2还有一部分
+     * 到底是谁还有剩的, 不用管, 2个while循环一视同仁
+     ************************************************************/
+
+    while(idx<=s1.size()){
+        int x = (s1[idx-1] - '0') > 0 ? (s1[idx-1] - '0') : 0;
+        sum = x + up;
+        up = sum/10;
+        result += (sum%10 + '0');
+
+        idx++;
+    }
+
+    while(idx<=s2.size()){
+        int x = (s2[idx-1] - '0') > 0 ? (s2[idx-1] - '0') : 0;
+        sum = x + up;
+        up = sum/10;
+        result += (sum%10 + '0');
+
+        idx++;
+    }
+
+    // 最后的进位
+    if(up>0){
+        result += '1';
+    }
+    
+    // 再倒回来
+    std::reverse(result.begin(), result.end());
+
+    std::cout << "add out :" << result << std::endl << std::endl;
+    return result;
+}
+
+
 std::string Solution43::multiply(std::string num1, std::string num2){
 
     std::string result("");
@@ -90,67 +154,6 @@ std::string Solution43::multiply(std::string num1, std::string num2){
     return result;
 }
 
-
-
-
-// 两个字符串相加
-std::string Solution43::addString(std::string s1, std::string s2){
-    std::cout << "add in1 :" << s1 << std::endl;
-    std::cout << "add in2 :" << s2 << std::endl;
-
-    int idx = 1;
-    std::string result("");
-    int up = 0;  // 进位标志
-    int sum = 0;
-
-    // 从低位开始加, 所以要反转一下
-    std::reverse(s1.begin(), s1.end());
-    std::reverse(s2.begin(), s2.end());
-
-    while(idx<=s1.size() && idx<=s2.size())
-    {
-        int x = (s1[idx-1] - '0') > 0 ? (s1[idx-1] - '0') : 0;
-        int y = (s2[idx-1] - '0') > 0 ? (s2[idx-1] - '0') : 0;
-        sum = x+y+up;
-        up = sum/10;
-        result += (sum%10 + '0');
-        idx++;
-    }
-    
-    /************************************************************
-     * 其中一个字符串已经处理完了, 剩下s1或者s2还有一部分
-     * 到底是谁还有剩的, 不用管, 2个while循环一视同仁
-     ************************************************************/
-
-    while(idx<=s1.size()){
-        int x = (s1[idx-1] - '0') > 0 ? (s1[idx-1] - '0') : 0;
-        sum = x + up;
-        up = sum/10;
-        result += (sum%10 + '0');
-
-        idx++;
-    }
-
-    while(idx<=s2.size()){
-        int x = (s2[idx-1] - '0') > 0 ? (s2[idx-1] - '0') : 0;
-        sum = x + up;
-        up = sum/10;
-        result += (sum%10 + '0');
-
-        idx++;
-    }
-
-    // 最后的进位
-    if(up>0){
-        result += '1';
-    }
-    
-    // 再倒回来
-    std::reverse(result.begin(), result.end());
-
-    std::cout << "add out :" << result << std::endl << std::endl;
-    return result;
-}
 
 
 void Solution43::test(){

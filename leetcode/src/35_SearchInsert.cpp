@@ -27,14 +27,14 @@ static int searchInsert(std::vector<int>& nums, int target){
 
     int mid = (left + right) / 2;
 
-    while(left<right){
+    while(left < right){
         if(nums[mid] == target){
             break;
         }
         else if(nums[mid] < target){
-            mid = (mid+right) / 2;
+            mid = (mid + right) / 2;
         }else{
-            mid = (left+mid) / 2;
+            mid = (left + mid) / 2;
         }
     }
 

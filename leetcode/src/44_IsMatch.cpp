@@ -26,9 +26,8 @@ bool Solution44::isMatch(std::string s, std::string p){
 
     // 星号才能匹配空字符串
     for(int j=1; j<pLeng; j++){
-        dp[0][j] =  (p[j]=='*' && dp[0][j-1])? true : false;  
+        dp[0][j] = (p[j]=='*' && dp[0][j-1]) ? true : false;  
     }
-
 
     for(int i=1; i<sLeng; i++){
         for(int j=1; j<pLeng; j++){
@@ -36,7 +35,7 @@ bool Solution44::isMatch(std::string s, std::string p){
                 dp[i][j] = (dp[i-1][j] || dp[i][j-1]);
             }else if(p[j] == '?'){
                 dp[i][j] = dp[i-1][j-1];
-            }else if(s[i]==s[j]){
+            }else if(s[i] == s[j]){
                 dp[i][j] = dp[i-1][j-1];
             }else{
                 dp[i][j] = false;
