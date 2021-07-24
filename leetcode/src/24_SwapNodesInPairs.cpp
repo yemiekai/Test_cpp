@@ -21,4 +21,3 @@ ListNode* Solution24::swapPairs(ListNode* head){
 
     return node;
 }
-
