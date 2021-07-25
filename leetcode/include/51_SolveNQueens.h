@@ -63,7 +63,7 @@ public:
                     continue;
                 }
                 
-                queens[row] = i;  // 第row行第i列放一个皇后
+                queens[row] = i;  // 第row行第i列放一个皇后, 也可以理解为, 有n个皇后, 每一行一个, 这是第row个, 放在第i列
                 columns.insert(i);
                 diagonals1.insert(diagonal1);
                 diagonals2.insert(diagonal2);
