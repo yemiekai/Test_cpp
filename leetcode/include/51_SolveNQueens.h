@@ -14,7 +14,26 @@
 
 // 51  N皇后问题
 /******************************************************************
+n 皇后问题 研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并且使皇后彼此之间不能相互攻击。
 
+给你一个整数 n ，返回所有不同的 n 皇后问题 的解决方案。
+
+每一种解法包含一个不同的 n 皇后问题 的棋子放置方案，该方案中 'Q' 和 '.' 分别代表了皇后和空位。
+
+
+输入：n = 4
+
+输出：[[".Q..",
+        "...Q",
+        "Q...",
+        "..Q."],
+
+       ["..Q.",
+        "Q...",
+        "...Q",
+        ".Q.."]]
+
+解释：如上图所示，4 皇后问题存在两个不同的解法。
 
  *******************************************************************/
 class Solution51{
@@ -22,7 +41,7 @@ class Solution51{
 public:
     std::vector<std::vector<std::string>> solveNQueens(int n){
         auto solutions = std::vector<std::vector<std::string>>();
-        auto queens = std::vector<int>(n, -1);
+        auto queens = std::vector<int>(n, -1);  // 每一行(n)的第几列放了一个皇后
         auto columns = std::unordered_set<int>();
         auto diagonals1 = std::unordered_set<int>();
         auto diagonals2 = std::unordered_set<int>();
@@ -32,8 +51,8 @@ public:
 
     void backtrack(std::vector<std::vector<std::string>> &solutions, 
                     std::vector<int> &queens, 
-                    int n, 
-                    int row, 
+                    int n, // n皇后
+                    int row, // 现在是第几行
                     std::unordered_set<int> &columns, 
                     std::unordered_set<int> &diagonals1,
                     std::unordered_set<int> &diagonals2) 

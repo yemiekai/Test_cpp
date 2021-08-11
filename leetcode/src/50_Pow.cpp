@@ -30,15 +30,15 @@ double Solution50::dfs(double x, int n){
         return 1.0;
     }
 
-    double y = dfs(x, n/2);  // 得到它的根号
+    double y = dfs(x, n/2);  // 得到'x'的'n/2'次方
 
-    return n%2 == 0 ? y*y : y*y*x;
+    return n%2 == 0 ? y*y : y*y*x;  // 返回 ('x'的'n/2'次方) 乘以  ('x'的'n/2'次方) , 即 ('x'的'n'次方) 
 }
 
 double Solution50::myPow(double x, int n){
     double result = 0;
 
-    result = dfs(x, std::abs(n));  // 这个函数的功能: 返回'根号x'乘以'根号x'的结果
+    result = dfs(x, std::abs(n));  // 这个函数的功能: 返回'x'的'n'次方
 
     if(n < 0){
         result = 1.0/result;
