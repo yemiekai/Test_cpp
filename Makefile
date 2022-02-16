@@ -8,6 +8,7 @@ INCPATH=-I. -I./include -I./leetcode/include -I./others/include -I./sort
 
 SOURCES = main.cpp 
 SOURCES += $(wildcard ./leetcode/src/*.cpp)
+SOURCES += $(wildcard ./others/src/*.cpp)
 
 OBJECTS=$(SOURCES:.cpp=.o)
 TARGET=main

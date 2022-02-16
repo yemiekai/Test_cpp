@@ -43,7 +43,7 @@ int Solution29::divide(int dividend, int divisor){
 
     while(res >= divisor){
 
-        // 每次把减数翻倍, 直到减不动了, 又从新来
+        // 每次把减数翻倍, 直到减不动了, 又重新来
         while(res >= sub){
             res = res - sub;
             result = result + once;

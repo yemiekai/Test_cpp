@@ -46,6 +46,8 @@ std::string Solution5::longestPalindrome2(std::string s){
      ****************************************/ 
     for (int l = 0; l < n; ++l) {  // 控制子字符串长度
         for (int i = 0; i + l < n; ++i) {
+
+            // i:头索引, j:尾索引
             int j = i + l;
             if (l == 0) {  // 单个字符, 必为回文
                 dp[i][j] = 1;
@@ -54,6 +56,7 @@ std::string Solution5::longestPalindrome2(std::string s){
             } else {
                 dp[i][j] = (s[i] == s[j] && dp[i + 1][j - 1]);
             }
+            
             if (dp[i][j] && l + 1 > ans.size()) {
                 ans = s.substr(i, l + 1);
             }

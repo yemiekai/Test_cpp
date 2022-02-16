@@ -11,7 +11,7 @@ std::vector<int> Solution1::twoSum(std::vector<int>& nums, int target){
 
     // 遍历数组
     for(int i = 0; i < size; i++){
-        matchNum = target - nums[i];  // 你要找到数
+        matchNum = target - nums[i];  // 你要找的数
 
         // 看看有没有
         if(mmap.find(matchNum) != mmap.end()){
