@@ -14,6 +14,7 @@ class Solution8 {
 public:
     void test();
     int myAtoi(std::string s);
+    int myAtoi2(std::string s);
 
 
 };
