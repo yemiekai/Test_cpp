@@ -14,8 +14,11 @@
 class Solution10 {
 public:
     void test();
+    bool bMatch(int i, int j);
     bool isMatch(std::string s, std::string p);
-
+private:
+    std::string m_s;
+    std::string m_p;
 
 };
 

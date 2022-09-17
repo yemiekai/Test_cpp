@@ -61,7 +61,7 @@ public:
         {"start", {"start", "signed", "in_number", "end"} },
         {"signed", {"end", "end", "in_number", "end"} },
         {"in_number", {"end", "end", "in_number", "end"} },
-        {"end", {"end", "end", "in_number", "end"}}
+        {"end", {"end", "end", "end", "end"}}
     };
 
     int get_col(char c){
