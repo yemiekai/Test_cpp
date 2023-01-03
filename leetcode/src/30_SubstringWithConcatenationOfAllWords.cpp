@@ -4,6 +4,15 @@
 #include <queue>
 #include <unordered_map>
 
+
+
+/******************************************************
+ * 输入字符串 s : "barfoothefoobarman"
+ * 单词表 words : ["foo","bar"]
+ * 
+ * 
+ * 
+ ******************************************************/
 std::vector<int> Solution30::findSubstring(std::string s, std::vector<std::string>& words)
 {
     std::vector<int> result;
@@ -14,9 +23,15 @@ std::vector<int> Solution30::findSubstring(std::string s, std::vector<std::strin
 
     for(int i=0; i<wordLen && (i + wordNums*wordLen)<=strLen; ++i)
     {
-        std::unordered_map<std::string, int> differ;
 
-        // 建立初始窗口, 并且用哈希表记录出现的单词次数
+        /******************************************************
+         * 建立初始窗口, 窗口的大小(里面框住的单词的个数)和给定单词表的词数一样
+         * 并且用哈希表记录出现的单词次数
+         * | b a r f o o | t h e f o o b a r m a n
+         * |[b a r]f o o | t h e f o o b a r m a n   { {"bar":1}, }
+         * | b a r[f o o]| t h e f o o b a r m a n   { {"bar":1}, {"foo":1} }
+         ******************************************************/
+        std::unordered_map<std::string, int> differ;
         for(int j=0; j<wordNums; j++)
         {
             ++differ[s.substr(i+j*wordLen, wordLen)];

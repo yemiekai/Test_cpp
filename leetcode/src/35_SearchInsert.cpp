@@ -24,19 +24,17 @@ int Solution35::searchInsert(std::vector<int>& nums, int target){
 static int searchInsert(std::vector<int>& nums, int target){
     int left = 0;
     int right = nums.size() - 1;
-
     int mid = (left + right) / 2;
 
-    while(left < right){
+    while(right >= left){
+        mid = (left + right) / 2;
         if(nums[mid] == target){
-            break;
-        }
-        else if(nums[mid] < target){
-            mid = (mid + right) / 2;
-        }else{
-            mid = (left + mid) / 2;
+            return mid;
+        }else if(nums[mid] < target){
+            left = mid+1;
+        }else if(target < nums[mid]){
+            right = mid-1;
         }
     }
-
-    return mid;
+    return left;
 }
